@@ -19,7 +19,6 @@ function deleteToDo(event) {
 }
 
 function paintToDo(newTodo) {
-    console.log(newTodo, newTodo.innerText);
     const li = document.createElement("li");
     li.id = newTodo.id;
     const span = document.createElement("span");
