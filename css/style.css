@@ -30,7 +30,7 @@ input {
 img {
     position:absolute;
     width:100vw;
-    /* height:100%; */
+    height:100vh;
     top: 0px;
     left: 0px;
     right:0px;
@@ -59,6 +59,31 @@ button {
     margin-top: 0;
     margin-bottom: 0;
 }
+
+#login-form {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 32px;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+}
+
+#login-form input {
+    color: #fff;
+    font-size: 16px;
+    border-bottom: 2px solid #dedede;
+}
+
+#login-form input::placeholder {
+    font-size: 16px;
+    color: #dedede;
+}
+
+#login-form button {
+    color: #fff;
+}
+
 #greeting {
     margin-top: 0;
     margin-bottom: 0;
