@@ -2,6 +2,8 @@ const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("input");
 const toDoList = document.getElementById("todo-list");
 
+const toDoListOpen = document.querySelector("#todo-list-open");
+
 const TODOS_KEY = "toDos";
 
 let toDos = [];
@@ -21,11 +23,14 @@ function deleteToDo(event) {
 function paintToDo(newTodo) {
     const li = document.createElement("li");
     li.id = newTodo.id;
+    const checkbox = document.createElement("input");
+    checkbox.type = 'checkbox';
     const span = document.createElement("span");
     span.innerText = newTodo.text;
     const button = document.createElement("button");
-    button.innerText = "❌";
+    button.innerText = "X";
     button.addEventListener('click', deleteToDo)
+    li.appendChild(checkbox);
     li.appendChild(span);
     li.appendChild(button);
     toDoList.appendChild(li);
@@ -58,3 +63,9 @@ if(savedToDos !== null) {
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo);
 }
+
+function showTodoList() {
+    toDoList.classList.toggle("hidden");
+}
+
+toDoListOpen.addEventListener('click', showTodoList);
